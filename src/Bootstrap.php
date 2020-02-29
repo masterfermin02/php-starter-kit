@@ -8,12 +8,10 @@ error_reporting(E_ALL);
 
 $environment = 'development';
 
-$request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
-$response = new \Http\HttpResponse;
+$injector = include('Dependencies.php');
 
-foreach ($response->getHeaders() as $header) {
-    header($header, false);
-}
+$request = $injector->make('Http\HttpRequest');
+$response = $injector->make('Http\HttpResponse');
 
 /**
  * Register the error handler
@@ -31,30 +29,27 @@ $whoops->register();
 //throw new \Exception;
 
 $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/hello-world', function () {
-        echo 'Hello World';
-    });
-    $r->addRoute('GET', '/another-route', function () {
-        echo 'This works too';
-    });
-    $r->addRoute('GET', '/', function () {
-        echo 'Hello World!';
-    });
+	$routes = include('Routes.php');
+	$addRoute = function ($route) use ($r) {
+		list($method, $uri, $handle) = $route;
+		$r->addRoute($method, $uri, $handle);
+	};
+	array_walk($routes, $addRoute);
 });
 
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
-switch ($routeInfo[0]) {
-    case \FastRoute\Dispatcher::NOT_FOUND:
-        $response->setContent('404 - Page not found');
-        $response->setStatusCode(404);
-        break;
-    case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
-        $response->setContent('405 - Method not allowed');
-        $response->setStatusCode(405);
-        break;
-    case \FastRoute\Dispatcher::FOUND:
-        $handler = $routeInfo[1];
-        $vars = $routeInfo[2];
-        call_user_func($handler, $vars);
-        break;
+$injector->define('FPBlog\Router\FoundDispacher', [
+	':routeInfo' => $routeInfo,
+	':injector' => $injector,
+]);
+$injector->define('FPBlog\Router\Dispacher', [
+	':routeInfo' => $routeInfo,
+	':injector' => $injector,
+]);
+$injector->make('FPBlog\Router\Dispacher')->dispach();
+
+foreach ($response->getHeaders() as $header) {
+	header($header, false);
 }
+
+echo $response->getContent();
