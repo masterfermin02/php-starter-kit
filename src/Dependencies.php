@@ -18,4 +18,32 @@ $injector->share('Http\HttpResponse');
 $injector->alias('FPBlog\Router\RouteDispacherInterface', 'FPBlog\Router\RouteDispacherInterface');
 $injector->share('FPBlog\Router\RouteDispacherInterface');
 
+$injector->define('Mustache_Engine', [
+	':options' => [
+		'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates', [
+			'extension' => '.html',
+		]),
+	],
+]);
+
+$injector->define('FPBlog\Page\FilePageReader', [
+	':pageFolder' => __DIR__ . '/../pages',
+]);
+
+$injector->delegate('Twig\Environment', function () use ($injector) {
+	$loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/templates');
+	$twig = new \Twig\Environment($loader);
+	return $twig;
+});
+
+$injector->alias('FPBlog\Page\PageReader', 'FPBlog\Page\FilePageReader');
+$injector->share('FPBlog\Page\FilePageReader');
+
+$injector->alias('FPBlog\Template\Renderer', 'FPBlog\Template\TwigRenderer');
+
+$injector->alias('FPBlog\Template\FrontendRenderer', 'FPBlog\Template\FrontendTwigRenderer');
+
+$injector->alias('FPBlog\Menu\MenuReader', 'FPBlog\Menu\ArrayMenuReader');
+$injector->share('FPBlog\Menu\ArrayMenuReader');
+
 return $injector;

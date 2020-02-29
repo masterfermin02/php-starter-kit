@@ -20,6 +20,7 @@ services:
       REDIS_HOST: redis
       SESSION_DRIVER: redis
       CACHE_DRIVER: redis
+      XDEBUG_CONFIG: remote_host=192.168.0.110
   mysql:
     image: mysql:5.7
     ports:
