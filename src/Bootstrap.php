@@ -11,7 +11,7 @@ $environment = 'development';
 $injector = include('Dependencies.php');
 
 $request = $injector->make('Http\HttpRequest');
-$response = $injector->make('Http\HttpResponse');
+  = $injector->make('Http\HttpResponse');
 
 /**
  * Register the error handler
