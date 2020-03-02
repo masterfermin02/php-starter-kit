@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05a0c04b8bdeabba5086faf7961df6d6",
+    "content-hash": "eb3dbbfc71f6e2922aa3a7e1f2d4ddeb",
     "packages": [
         {
             "name": "filp/whoops",
@@ -491,6 +491,36 @@
                 "instantiate"
             ],
             "time": "2019-10-21T16:45:58+00:00"
+        },
+        {
+            "name": "mikey179/vfsstream",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bovigo/vfsStream.git",
+                "reference": "371d06423604a8f3fd3dfc68cff235c32652d6e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bovigo/vfsStream/zipball/371d06423604a8f3fd3dfc68cff235c32652d6e6",
+                "reference": "371d06423604a8f3fd3dfc68cff235c32652d6e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "org\\bovigo\\vfs": "src/main/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "homepage": "http://vfs.bovigo.org/",
+            "time": "2012-05-15T19:05:40+00:00"
         },
         {
             "name": "myclabs/deep-copy",
