@@ -5,3 +5,6 @@ Custom blog api in PHP
 - clone the repository
 - run `docker-compose up`
 - run  `composer install`
+
+# Run test
+- `composer run test`

@@ -1,9 +1,7 @@
 <?php declare(strict_types=1);
 
-use FPBlog\Page\InvalidPageException;
 use PHPUnit\Framework\TestCase;
 use FPBlog\Page\FilePageReader;
-use org\bovigo\vfs\vfsStream;
 
 class FilePageReaderTest extends TestCase
 {
