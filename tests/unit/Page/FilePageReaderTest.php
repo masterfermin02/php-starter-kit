@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use FPBlog\Page\FilePageReader;
+use FPBlog\Page\PageReader;
 
 class FilePageReaderTest extends TestCase
 {
@@ -31,6 +32,11 @@ class FilePageReaderTest extends TestCase
         $contentExperted = $file->readBySlug('page-test');
 
         $this->assertSame($contentExperted, $this->content);
+    }
+
+    public function testImplementPageReader(): void
+    {
+        $this->assertInstanceOf(PageReader::class, new FilePageReader(''));
     }
 
     public function tearDown()
