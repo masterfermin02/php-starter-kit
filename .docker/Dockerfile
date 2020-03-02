@@ -1,9 +1,9 @@
-FROM php:7.2-apache
+FROM php:7.3-apache
 
 COPY . /srv/app
 COPY .docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
-WORKDIR /srv/app
+WORKDIR /srv/app-
 
 RUN chown -R www-data:www-data /srv/app \
     && a2enmod rewrite
