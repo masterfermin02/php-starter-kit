@@ -1,7 +1,5 @@
 language: php
 php:
   - '7.3'
-  - hhvm # on Trusty only
-  - nightly
 before_script: composer install
 script: composer run test
