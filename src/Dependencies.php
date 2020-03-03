@@ -51,4 +51,7 @@ $injector->share( 'FPBlog\Router\ArrayRouterReader' );
 
 $injector->share('Parsedown');
 
+$injector->alias( 'FPBlog\Parse\Parser', 'FPBlog\Parse\MarkDownToHtmlParser' );
+$injector->share( 'FPBlog\Parse\MarkDownToHtmlParser' );
+
 return $injector;

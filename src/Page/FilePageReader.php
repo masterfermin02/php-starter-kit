@@ -7,12 +7,10 @@ use FPBlog\File\FileReader;
 class FilePageReader implements PageReader
 {
 	protected $fileReader;
-	protected $parsedown;
 
-	public function __construct(FileReader $fileReader, \Parsedown $parsedown)
+	public function __construct(FileReader $fileReader)
 	{
 		$this->fileReader = $fileReader;
-		$this->parsedown = $parsedown;
 	}
 
 	public function readBySlug(string $slug) : string
@@ -23,7 +21,6 @@ class FilePageReader implements PageReader
 			throw new InvalidPageException($slug);
 		}
 
-		return $this->parsedown->text($this->fileReader->read($path));
+		return $this->fileReader->read($path);
 	}
-
 }
