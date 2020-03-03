@@ -36,6 +36,6 @@ class Page
 		}
 
 		$html = $this->renderer->render('Page', $data);
-		$this->response->setContent($html);
+		$this->response->setContent(html_entity_decode($html));
 	}
 }

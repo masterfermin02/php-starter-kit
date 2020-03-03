@@ -49,4 +49,6 @@ $injector->share('FPBlog\Menu\ArrayMenuReader');
 $injector->alias( 'FPBlog\Router\RouterReader', 'FPBlog\Router\ArrayRouterReader' );
 $injector->share( 'FPBlog\Router\ArrayRouterReader' );
 
+$injector->share('Parsedown');
+
 return $injector;
