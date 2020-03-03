@@ -26,8 +26,8 @@ $injector->define('Mustache_Engine', [
 	],
 ]);
 
-$injector->define('FPBlog\Page\FilePageReader', [
-	':pageFolder' => __DIR__ . '/../pages',
+$injector->define('FPBlog\File\FileReader', [
+	':folder' => __DIR__ . '/../',
 ]);
 
 $injector->delegate('Twig\Environment', function () use ($injector) {
@@ -45,5 +45,8 @@ $injector->alias('FPBlog\Template\FrontendRenderer', 'FPBlog\Template\FrontendTw
 
 $injector->alias('FPBlog\Menu\MenuReader', 'FPBlog\Menu\ArrayMenuReader');
 $injector->share('FPBlog\Menu\ArrayMenuReader');
+
+$injector->alias( 'FPBlog\Router\RouterReader', 'FPBlog\Router\ArrayRouterReader' );
+$injector->share( 'FPBlog\Router\ArrayRouterReader' );
 
 return $injector;

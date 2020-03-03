@@ -1,26 +1,27 @@
-<?php
-
+<?php declare(strict_types = 1);
 
 namespace FPBlog\Page;
 
+use FPBlog\File\FileReader;
+
 class FilePageReader implements PageReader
 {
-	protected $pageFolder;
+	protected $fileReader;
 
-	public function __construct(string $pageFolder)
+	public function __construct(FileReader $fileReader)
 	{
-		$this->pageFolder = $pageFolder;
+		$this->fileReader = $fileReader;
 	}
 
 	public function readBySlug(string $slug) : string
 	{
-		$path = "$this->pageFolder/$slug.md";
+		$path = "pages/$slug.md";
 
-		if (!file_exists($path)) {
+		if (!$this->fileReader->fileExists($path)) {
 			throw new InvalidPageException($slug);
 		}
 
-		return file_get_contents($path);
+		return $this->fileReader->read($path);
 	}
 
 }

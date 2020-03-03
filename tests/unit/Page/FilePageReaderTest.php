@@ -3,6 +3,7 @@
 use PHPUnit\Framework\TestCase;
 use FPBlog\Page\FilePageReader;
 use FPBlog\Page\PageReader;
+use FPBlog\File\FileReader;
 
 class FilePageReaderTest extends TestCase
 {
@@ -21,14 +22,14 @@ class FilePageReaderTest extends TestCase
      */
     public function testInvalidPageExceptionIsThrownWhenNoPage(): void
     {
-        $file = new FilePageReader('');
+        $file = new FilePageReader(new FileReader(''));
         $file->readBySlug('page-no-found.md');
     }
 
     public function testCanReadBySlug(): void
     {
 
-        $file = new FilePageReader('pages');
+        $file = new FilePageReader(new FileReader( __DIR__ . '/../../../'));
         $contentExperted = $file->readBySlug('page-test');
 
         $this->assertSame($contentExperted, $this->content);
@@ -36,7 +37,7 @@ class FilePageReaderTest extends TestCase
 
     public function testImplementPageReader(): void
     {
-        $this->assertInstanceOf(PageReader::class, new FilePageReader(''));
+        $this->assertInstanceOf(PageReader::class, new FilePageReader(new FileReader('')));
     }
 
     public function tearDown()

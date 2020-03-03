@@ -2,6 +2,8 @@
 
 namespace FPBlog;
 
+use FPBlog\Router\ArrayRouterReader;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 error_reporting(E_ALL);
@@ -27,9 +29,9 @@ if ($environment !== 'production') {
 $whoops->register();
 
 //throw new \Exception;
-
-$dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) {
-	$routes = include('Routes.php');
+$arrayRoutetReader = new ArrayRouterReader();
+$dispatcher = \FastRoute\simpleDispatcher (function (\FastRoute\RouteCollector $r) use ($arrayRoutetReader) {
+	$routes = $arrayRoutetReader->readeRoute();
 	$addRoute = function ($route) use ($r) {
 		list($method, $uri, $handle) = $route;
 		$r->addRoute($method, $uri, $handle);
