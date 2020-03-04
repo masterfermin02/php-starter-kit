@@ -1,4 +1,6 @@
 {% extends "Layout.html" %}
 {% block content %}
-{{ content }}
+    {% apply markdown_to_html %}
+        {{ content }}
+    {% endapply %}
 {% endblock %}

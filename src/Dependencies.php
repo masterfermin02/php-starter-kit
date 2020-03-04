@@ -1,5 +1,10 @@
 <?php declare(strict_types = 1);
 
+use Twig\Extra\Markdown\DefaultMarkdown;
+use Twig\Extra\Markdown\MarkdownExtension;
+use Twig\Extra\Markdown\MarkdownRuntime;
+use Twig\RuntimeLoader\RuntimeLoaderInterface;
+
 $injector = new \Auryn\Injector;
 
 $injector->alias('Http\Request', 'Http\HttpRequest');
@@ -33,6 +38,14 @@ $injector->define('FPBlog\File\FileReader', [
 $injector->delegate('Twig\Environment', function () use ($injector) {
 	$loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/templates');
 	$twig = new \Twig\Environment($loader);
+	$twig->addExtension(new MarkdownExtension());
+	$twig->addRuntimeLoader(new class implements RuntimeLoaderInterface {
+		public function load($class) {
+			if (MarkdownRuntime::class === $class) {
+				return new MarkdownRuntime(new DefaultMarkdown());
+			}
+		}
+	});
 	return $twig;
 });
 

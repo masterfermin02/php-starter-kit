@@ -8,14 +8,11 @@ class ArrayMenuReaderTest extends TestCase
 {
     public function testCanReadMenu(): void
     {
-        $experted = [
-            ['href' => '/', 'text' => 'Homepage'],
-            ['href' => '/page-one', 'text' => 'Page One'],
-        ];
+        $experted = ['href' => '/', 'text' => 'Homepage'];
 
         $menu = new ArrayMenuReader();
 
-        $this->assertSame($experted, $menu->readMenu());
+        $this->assertSame($experted, $menu->readMenu()[0]);
     }
 
     public function testArrayMenuReaderImplementMenuReader(): void

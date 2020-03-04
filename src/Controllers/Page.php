@@ -40,7 +40,7 @@ class Page
 			return $this->response->setContent('404 - Page not found');
 		}
 
-		$html = $this->parser->parse($this->renderer->render('Page', $data));
+		$html = $this->renderer->render('Page', $data);
 		$this->response->setContent($html);
 	}
 }

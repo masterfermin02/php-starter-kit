@@ -13,9 +13,9 @@ class MarkDownToHtmlParser implements Parser
         $this->stringToHtmlParser = $stringToHtmlParser;
     }
 
-    public function parse( string $content ): string
+    public function parse( string $content )
     {
-        return $this->stringToHtmlParser->parse($this->parsedown->text($content));
+        return $this->parsedown->text($content);
     }
 
 }

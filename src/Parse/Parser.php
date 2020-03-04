@@ -4,5 +4,5 @@ namespace FPBlog\Parse;
 
 interface Parser
 {
-    public function parse(string $content): string;
+    public function parse(string $content);
 }
