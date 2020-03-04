@@ -7,7 +7,11 @@ class FrontendTwigRendererTest extends TestCase
 {
     public function testCanRender(): void
     {
-        $menuItem = new \FPBlog\Menu\ArrayMenuReader();
+	    $request = $this->createMock(\Http\Request::class);
+	    $request->method('getUri')
+	            ->with()
+	            ->willReturn('/');
+        $menuItem = new \FPBlog\Menu\ArrayMenuReader($request);
         $renderer = $this->createMock(\FPBlog\Template\TwigRenderer::class);
         $renderer->expects($this->once())
         ->method('render')
