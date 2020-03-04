@@ -40,15 +40,15 @@ $dispatcher = \FastRoute\simpleDispatcher (function (\FastRoute\RouteCollector $
 });
 
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
-$injector->define('FPBlog\Router\FoundDispacher', [
+$injector->define('FPBlog\Router\FoundDispatcher', [
 	':routeInfo' => $routeInfo,
 	':injector' => $injector,
 ]);
-$injector->define('FPBlog\Router\Dispacher', [
+$injector->define('FPBlog\Router\RouterDispatcher', [
 	':routeInfo' => $routeInfo,
 	':injector' => $injector,
 ]);
-$injector->make('FPBlog\Router\Dispacher')->dispach();
+$injector->make('FPBlog\Router\RouterDispatcher')->dispatch();
 
 foreach ($response->getHeaders() as $header) {
 	header($header, false);

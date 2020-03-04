@@ -3,9 +3,9 @@
 
 namespace FPBlog\Router;
 
-use \Http\HttpResponse;
+use Http\HttpResponse;
 
-class MethodNotAllowedDispacher implements RouteDispacherInterface {
+class MethodNotAllowedDispatcher implements RouteDispatcherInterface {
 
 	protected $response;
 
@@ -14,7 +14,7 @@ class MethodNotAllowedDispacher implements RouteDispacherInterface {
 		$this->response = $response;
 	}
 
-	public function dispach(): void
+	public function dispatch(): void
 	{
 		// TODO: Implement dispach() method.
 		$this->response->setContent('405 - Method not allowed');

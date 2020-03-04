@@ -20,8 +20,8 @@ $injector->define('Http\HttpRequest', [
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
 
-$injector->alias('FPBlog\Router\RouteDispacherInterface', 'FPBlog\Router\RouteDispacherInterface');
-$injector->share('FPBlog\Router\RouteDispacherInterface');
+$injector->alias('FPBlog\Router\RouteDispatcherInterface', 'FPBlog\Router\RouteDispatcherInterface');
+$injector->share('FPBlog\Router\RouteDispatcherInterface');
 
 $injector->define('Mustache_Engine', [
 	':options' => [

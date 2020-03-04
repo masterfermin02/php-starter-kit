@@ -5,7 +5,7 @@ namespace FPBlog\Router;
 
 use Auryn\Injector;
 
-class FoundDispacher implements RouteDispacherInterface {
+class FoundDispatcher implements RouteDispatcherInterface {
 
 	protected $routeInfo;
 	protected $injector;
@@ -16,7 +16,7 @@ class FoundDispacher implements RouteDispacherInterface {
 		$this->injector = $injector;
 	}
 
-	public function dispach(): void
+	public function dispatch(): void
 	{
 		$className = $this->routeInfo[1][0];
 		$method = $this->routeInfo[1][1];
