@@ -30,7 +30,7 @@ class ArrayMenuReader implements MenuReader
 				'class' => 'nav-link ' . ($item['href'] == $this->request->getUri() ? 'active' : ''),
 			];
 		}, [
-			['href' => '/', 'text' => 'Homepage'],
+			['href' => '/', 'text' => 'Home'],
 			['href' => '/page-one', 'text' => 'Page One'],
 			['href' => '/page-two', 'text' => 'Page Two'],
 		]);

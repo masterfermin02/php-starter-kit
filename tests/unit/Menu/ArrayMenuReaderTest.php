@@ -19,7 +19,7 @@ class ArrayMenuReaderTest extends TestCase
 
 	public function testCanReadMenu(): void
     {
-        $experted = ['href' => '/', 'text' => 'Homepage', 'class' => 'nav-link active'];
+        $experted = ['href' => '/', 'text' => 'Home', 'class' => 'nav-link active'];
 
 
         $this->assertSame($experted, $this->menu->readMenu()[0]);
