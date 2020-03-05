@@ -10,3 +10,11 @@ Custom blog api in PHP
 
 # Run test
 - `composer run test`
+
+# Resources
+These are a list of resources if you want to create a project like this or getting more knowledge 
+on how to build your own framawork.
+- [PHP the right way](https://phptherightway.com/#code_style_guide)
+- [PHP without framworks](https://github.com/PatrickLouys/no-framework-tutorial)
+- [SOLID](https://en.wikipedia.org/wiki/SOLID)
+
