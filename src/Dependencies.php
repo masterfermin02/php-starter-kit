@@ -53,7 +53,6 @@ $injector->alias('FPBlog\Page\PageReader', 'FPBlog\Page\FilePageReader');
 $injector->share('FPBlog\Page\FilePageReader');
 
 $injector->alias('FPBlog\Template\Renderer', 'FPBlog\Template\TwigRenderer');
-
 $injector->alias('FPBlog\Template\FrontendRenderer', 'FPBlog\Template\FrontendTwigRenderer');
 
 $injector->alias('FPBlog\Menu\MenuReader', 'FPBlog\Menu\ArrayMenuReader');
@@ -66,5 +65,14 @@ $injector->share('Parsedown');
 
 $injector->alias( 'FPBlog\Parse\Parser', 'FPBlog\Parse\MarkDownToHtmlParser' );
 $injector->share( 'FPBlog\Parse\MarkDownToHtmlParser' );
+
+$injector->define('PDO', [
+    ':dns' => 'mysql:host=mysql;dbname=fp_blog',
+    ':user' => 'app',
+    ':passwd' => 'password',
+]);
+
+$injector->alias( 'FPBlog\Database\Driver', 'FPBlog\Database\PDODRiver' );
+$injector->share( 'FPBlog\Database\PDODriver' );
 
 return $injector;
