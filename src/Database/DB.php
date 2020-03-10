@@ -13,4 +13,9 @@ class DB
         $this->driver = $driver;
     }
 
+    public function create()
+    {
+
+    }
+
 }
