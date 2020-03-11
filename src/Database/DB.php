@@ -6,16 +6,11 @@ namespace FPBlog\Database;
 
 class DB
 {
-    protected $driver;
+    protected $adapter;
 
-    public function __construct(Driver $driver)
+    public function __construct(AdapterInterface $adapter)
     {
-        $this->driver = $driver;
-    }
-
-    public function create()
-    {
-
+        $this->adapter = $adapter;
     }
 
 }
