@@ -9,7 +9,7 @@ This project will help you to start a new project in PHP
 - run  `composer install`
 
 # Usage with PHP native server
-- run `php -S localhost:8000 -t public/`
+- run `sh serve.sh`
 
 # Run test
 - `composer run test`
