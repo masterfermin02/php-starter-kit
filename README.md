@@ -15,12 +15,11 @@ cd [project-name]
 ``
 
 #  Usage with composer
-- clone the repository
-- run `docker-compose up --biuld`
-- run  `composer install`
-- `docker-compose up`
-- Run in background `docker-compose up -d`
-- To see your local cotainers running process `docker ps`
+- Run `docker-compose up --biuld`
+- Run  `composer install`
+- Run `docker-compose up` now you should see in your localhost:8083 the welcome page.
+- Run the container in background `docker-compose up -d`
+- To see your local containers running process `docker ps`
 - Stop containers in background `docker-compose down`
 
 # Usage with PHP native server
