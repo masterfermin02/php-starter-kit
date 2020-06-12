@@ -3,10 +3,13 @@
 # PHP starter kit
 This project will help you to start a new project in PHP
 
-# Usage
+#  Usage with composer
 - clone the repository
 - run `docker-compose up --biuld`
 - run  `composer install`
+
+# Usage with PHP native server
+- run `php -S localhost:8000 -t public/`
 
 # Run test
 - `composer run test`
