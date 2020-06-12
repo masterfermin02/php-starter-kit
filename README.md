@@ -20,7 +20,6 @@ This project will help you to start a new project in PHP
 If you notice that your machine has any file permission errors, you might need to execute the following in a project locally
 `chmod -R o+rw bootstrap/ storage/`
 
-
 # Resources
 These are a list of resources if you want to create a project like this or getting more knowledge 
 on how to build your own framework in PHP.
