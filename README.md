@@ -3,22 +3,31 @@
 # PHP starter kit
 This project will help you to start a new project in PHP
 
+# How to make it work
+A few simple steps are needed to get this application up and running:
+
+The next step assumes that composer is available in your PATH
+
+``sh
+# install the project and its dependencies
+composer create-project masterfermin02/php-starter-kit [project-name]
+cd [project-name]
+``
+
 #  Usage with composer
 - clone the repository
 - run `docker-compose up --biuld`
 - run  `composer install`
+- `docker-compose up`
+- Run in background `docker-compose up -d`
+- To see your local cotainers running process `docker ps`
+- Stop containers in background `docker-compose down`
 
 # Usage with PHP native server
 - run `sh serve.sh`
 
 # Run test
 - `composer run test`
-
-# Run the project
-- `docker-compose up`
-- Run in background `docker-compose up -d`
-- To see your local cotainers running process `docker ps`
-- Stop containers in background `docker-compose down`
 
 # Helpers
 If you notice that your machine has any file permission errors, you might need to execute the following in a project locally
