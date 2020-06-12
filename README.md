@@ -8,11 +8,11 @@ A few simple steps are needed to get this application up and running:
 
 The next step assumes that composer is available in your PATH
 
-``sh
+```sh
 # install the project and its dependencies
 composer create-project masterfermin02/php-starter-kit [project-name]
 cd [project-name]
-``
+```
 
 #  Usage with composer
 - Run `docker-compose up --biuld`
