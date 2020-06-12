@@ -31,3 +31,6 @@ on how to build your own framework in PHP.
 - [PHP without frameworks](https://github.com/PatrickLouys/no-framework-tutorial)
 - [SOLID](https://en.wikipedia.org/wiki/SOLID)
 
+# Feedback
+Found a bug or have a suggestion? Please create a [new GitHub issue](https://github.com/masterfermin02/php-starter-kit/issues/new). We want your feedback!
+
