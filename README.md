@@ -14,7 +14,7 @@ composer create-project masterfermin02/php-starter-kit [project-name]
 cd [project-name]
 ```
 
-#  Usage with composer
+#  Usage with docker
 - Run `docker-compose up --biuld`
 - Run  `composer install`
 - Run `docker-compose up` now you should see in your localhost:8083 the welcome page.
