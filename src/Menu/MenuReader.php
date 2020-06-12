@@ -1,9 +1,9 @@
 <?php declare( strict_types=1 );
 
-namespace FPBlog\Menu;
+namespace App\Menu;
 
 
 interface MenuReader
 {
-	public function readMenu() : array;
+	public function readMenu(): array;
 }

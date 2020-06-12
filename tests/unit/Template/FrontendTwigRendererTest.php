@@ -11,13 +11,13 @@ class FrontendTwigRendererTest extends TestCase
 	    $request->method('getUri')
 	            ->with()
 	            ->willReturn('/');
-        $menuItem = new \FPBlog\Menu\ArrayMenuReader($request);
-        $renderer = $this->createMock(\FPBlog\Template\TwigRenderer::class);
+        $menuItem = new \App\Menu\ArrayMenuReader($request);
+        $renderer = $this->createMock(\App\Template\TwigRenderer::class);
         $renderer->expects($this->once())
         ->method('render')
         ->with('Hello', [ 'menuItems' => $menuItem->readMenu()])
         ->willReturn('Hello');
-        $frontendTwigRenderer = new \FPBlog\Template\FrontendTwigRenderer($renderer, $menuItem);
+        $frontendTwigRenderer = new \App\Template\FrontendTwigRenderer($renderer, $menuItem);
 
         $this->assertSame('Hello', $frontendTwigRenderer->render('Hello', []));
     }

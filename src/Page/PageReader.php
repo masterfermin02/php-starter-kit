@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog\Page;
+namespace App\Page;
 
 interface PageReader
 {

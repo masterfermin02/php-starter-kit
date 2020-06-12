@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use FPBlog\Page\FilePageReader;
-use FPBlog\Page\PageReader;
-use FPBlog\File\FileReader;
+use App\Page\FilePageReader;
+use App\Page\PageReader;
+use App\File\FileReader;
 
 class FilePageReaderTest extends TestCase
 {
@@ -18,7 +18,7 @@ class FilePageReaderTest extends TestCase
     }
 
     /**
-     * @expectedException FPBlog\Page\InvalidPageException
+     * @expectedException App\Page\InvalidPageException
      */
     public function testInvalidPageExceptionIsThrownWhenNoPage(): void
     {

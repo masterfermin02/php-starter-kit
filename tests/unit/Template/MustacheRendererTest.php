@@ -12,7 +12,7 @@ class MustacheRendererTest extends TestCase
             ->method('render')
             ->with('Hello', [])
             ->willReturn('Hello');
-        $mustacheRenderer = new \FPBlog\Template\MustacheRenderer($renderer);
+        $mustacheRenderer = new \App\Template\MustacheRenderer($renderer);
 
         $this->assertSame('Hello', $mustacheRenderer->render('Hello', []));
     }

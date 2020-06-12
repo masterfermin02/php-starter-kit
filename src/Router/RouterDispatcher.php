@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 
-namespace FPBlog\Router;
+namespace App\Router;
 
 use \FastRoute\Dispatcher;
 use \Auryn\Injector;

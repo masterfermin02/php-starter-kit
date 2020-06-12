@@ -1,7 +1,7 @@
 <?php
 
 
-namespace FPBlog\Router;
+namespace App\Router;
 
 
 interface RouteDispatcherInterface {

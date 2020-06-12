@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog\Page;
+namespace App\Page;
 
-use FPBlog\File\FileReader;
+use App\File\FileReader;
 
 class FilePageReader implements PageReader
 {

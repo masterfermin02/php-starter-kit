@@ -1,7 +1,7 @@
 <?php
 
 
-namespace FPBlog\Models;
+namespace App\Models;
 
 
 class Client implements Model

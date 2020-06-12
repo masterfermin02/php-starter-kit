@@ -10,7 +10,7 @@ class TwigRenderer
             ->method('render')
             ->with('Hello', [])
             ->willReturn('Hello');
-        $twigRenderer = new \FPBlog\Template\TwigRenderer($renderer);
+        $twigRenderer = new \App\Template\TwigRenderer($renderer);
 
         $this->assertSame('Hello', $twigRenderer->render('Hello', []));
     }

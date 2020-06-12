@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog\Controllers;
+namespace App\Controllers;
 
-use FPBlog\Template\FrontendRenderer;
+use App\Template\FrontendRenderer;
 use Http\Request;
 use Http\Response;
 

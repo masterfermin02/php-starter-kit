@@ -20,8 +20,8 @@ $injector->define('Http\HttpRequest', [
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
 
-$injector->alias('FPBlog\Router\RouteDispatcherInterface', 'FPBlog\Router\RouteDispatcherInterface');
-$injector->share('FPBlog\Router\RouteDispatcherInterface');
+$injector->alias('App\Router\RouteDispatcherInterface', 'App\Router\RouteDispatcherInterface');
+$injector->share('App\Router\RouteDispatcherInterface');
 
 $injector->define('Mustache_Engine', [
 	':options' => [
@@ -31,7 +31,7 @@ $injector->define('Mustache_Engine', [
 	],
 ]);
 
-$injector->define('FPBlog\File\FileReader', [
+$injector->define('App\File\FileReader', [
 	':folder' => __DIR__ . '/../',
 ]);
 
@@ -49,22 +49,22 @@ $injector->delegate('Twig\Environment', function () use ($injector) {
 	return $twig;
 });
 
-$injector->alias('FPBlog\Page\PageReader', 'FPBlog\Page\FilePageReader');
-$injector->share('FPBlog\Page\FilePageReader');
+$injector->alias('App\Page\PageReader', 'App\Page\FilePageReader');
+$injector->share('App\Page\FilePageReader');
 
-$injector->alias('FPBlog\Template\Renderer', 'FPBlog\Template\TwigRenderer');
-$injector->alias('FPBlog\Template\FrontendRenderer', 'FPBlog\Template\FrontendTwigRenderer');
+$injector->alias('App\Template\Renderer', 'App\Template\TwigRenderer');
+$injector->alias('App\Template\FrontendRenderer', 'App\Template\FrontendTwigRenderer');
 
-$injector->alias('FPBlog\Menu\MenuReader', 'FPBlog\Menu\ArrayMenuReader');
-$injector->share('FPBlog\Menu\ArrayMenuReader');
+$injector->alias('App\Menu\MenuReader', 'App\Menu\ArrayMenuReader');
+$injector->share('App\Menu\ArrayMenuReader');
 
-$injector->alias( 'FPBlog\Router\RouterReader', 'FPBlog\Router\ArrayRouterReader' );
-$injector->share( 'FPBlog\Router\ArrayRouterReader' );
+$injector->alias( 'App\Router\RouterReader', 'App\Router\ArrayRouterReader' );
+$injector->share( 'App\Router\ArrayRouterReader' );
 
 $injector->share('Parsedown');
 
-$injector->alias( 'FPBlog\Parse\Parser', 'FPBlog\Parse\MarkDownToHtmlParser' );
-$injector->share( 'FPBlog\Parse\MarkDownToHtmlParser' );
+$injector->alias( 'App\Parse\Parser', 'App\Parse\MarkDownToHtmlParser' );
+$injector->share( 'App\Parse\MarkDownToHtmlParser' );
 
 $injector->define('PDO', [
     ':dns' => 'mysql:host=mysql;dbname=fp_blog',

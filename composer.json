@@ -1,7 +1,7 @@
 {
-  "name": "fp-blog/backend",
-  "description": "Custom blog api in PHP",
-  "keywords": ["Blog", "PHP", "No frameworks"],
+  "name": "masterfermin02/php-starter-kei",
+  "description": "This project will help you to start a new project in PHP",
+  "keywords": ["Blog", "PHP", "No frameworks", "starter", "startup", "starter-kit", "start-kit", "startup-kit"],
   "license": "MIT",
   "authors": [
     {
@@ -23,7 +23,7 @@
   },
   "autoload": {
     "psr-4": {
-      "FPBlog\\": "src/"
+      "App\\": "src/"
     }
   },
   "require-dev": {

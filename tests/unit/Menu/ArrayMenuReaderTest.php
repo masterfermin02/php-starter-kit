@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use FPBlog\Menu\ArrayMenuReader;
-use FPBlog\Menu\MenuReader;
+use App\Menu\ArrayMenuReader;
+use App\Menu\MenuReader;
 
 class ArrayMenuReaderTest extends TestCase
 {

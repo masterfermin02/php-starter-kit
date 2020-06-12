@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog;
+namespace App;
 
-use FPBlog\Router\ArrayRouterReader;
+use App\Router\ArrayRouterReader;
 
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -41,15 +41,15 @@ $dispatcher = \FastRoute\simpleDispatcher (function (\FastRoute\RouteCollector $
 });
 
 $routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
-$injector->define('FPBlog\Router\FoundDispatcher', [
+$injector->define('App\Router\FoundDispatcher', [
 	':routeInfo' => $routeInfo,
 	':injector' => $injector,
 ]);
-$injector->define('FPBlog\Router\RouterDispatcher', [
+$injector->define('App\Router\RouterDispatcher', [
 	':routeInfo' => $routeInfo,
 	':injector' => $injector,
 ]);
-$injector->make('FPBlog\Router\RouterDispatcher')->dispatch();
+$injector->make('App\Router\RouterDispatcher')->dispatch();
 
 foreach ($response->getHeaders() as $header) {
 	header($header, false);

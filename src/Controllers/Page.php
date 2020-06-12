@@ -1,11 +1,11 @@
 <?php declare( strict_types=1 );
 
 
-namespace FPBlog\Controllers;
+namespace App\Controllers;
 
-use FPBlog\Page\InvalidPageException;
-use FPBlog\Page\PageReader;
-use FPBlog\Template\FrontendRenderer;
+use App\Page\InvalidPageException;
+use App\Page\PageReader;
+use App\Template\FrontendRenderer;
 use Http\Response;
 
 class Page

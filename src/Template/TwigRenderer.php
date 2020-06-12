@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog\Template;
+namespace App\Template;
 
 use Twig\Environment;
 

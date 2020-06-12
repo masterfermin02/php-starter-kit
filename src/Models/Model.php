@@ -1,6 +1,6 @@
 <?php
 
-namespace FPBlog\Models;
+namespace App\Models;
 
 interface Model
 {

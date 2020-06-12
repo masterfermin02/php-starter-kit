@@ -1,9 +1,9 @@
 <?php
 
 use FastRoute\Dispatcher;
-use FPBlog\Router\FoundDispatcher;
-use FPBlog\Router\MethodNotAllowedDispatcher;
-use FPBlog\Router\NoFoundDispatcher;
+use App\Router\FoundDispatcher;
+use App\Router\MethodNotAllowedDispatcher;
+use App\Router\NoFoundDispatcher;
 use PHPUnit\Framework\TestCase;
 
 class DispacherTest extends TestCase
@@ -22,7 +22,7 @@ class DispacherTest extends TestCase
             ->with(NoFoundDispatcher::class)
             ->willReturn($noFoundMock);
         $routerInfor = [Dispatcher::NOT_FOUND];
-        $dispacher = new \FPBlog\Router\RouterDispatcher($routerInfor, $injector);
+        $dispacher = new \App\Router\RouterDispatcher($routerInfor, $injector);
         $dispacher->dispatch();
     }
 
@@ -40,7 +40,7 @@ class DispacherTest extends TestCase
             ->with(FoundDispatcher::class)
             ->willReturn($foundMock);
         $routerInfor = [Dispatcher::FOUND];
-        $dispacher = new \FPBlog\Router\RouterDispatcher($routerInfor, $injector);
+        $dispacher = new \App\Router\RouterDispatcher($routerInfor, $injector);
         $dispacher->dispatch();
     }
 
@@ -58,7 +58,7 @@ class DispacherTest extends TestCase
             ->with(MethodNotAllowedDispatcher::class)
             ->willReturn($foundMock);
         $routerInfor = [Dispatcher::METHOD_NOT_ALLOWED];
-        $dispacher = new \FPBlog\Router\RouterDispatcher($routerInfor, $injector);
+        $dispacher = new \App\Router\RouterDispatcher($routerInfor, $injector);
         $dispacher->dispatch();
     }
 }

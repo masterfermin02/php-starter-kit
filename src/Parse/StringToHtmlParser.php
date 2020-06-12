@@ -1,7 +1,7 @@
 <?php
 
 
-namespace FPBlog\Parse;
+namespace App\Parse;
 
 
 class StringToHtmlParser implements Parser

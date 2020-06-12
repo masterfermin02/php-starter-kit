@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog\Template;
+namespace App\Template;
 
-use FPBlog\Menu\MenuReader;
+use App\Menu\MenuReader;
 
 class FrontendTwigRenderer implements FrontendRenderer
 {

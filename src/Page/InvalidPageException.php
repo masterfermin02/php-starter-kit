@@ -1,7 +1,7 @@
 <?php
 
 
-namespace FPBlog\Page;
+namespace App\Page;
 
 use Exception;
 

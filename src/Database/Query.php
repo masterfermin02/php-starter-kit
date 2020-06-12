@@ -1,7 +1,7 @@
 <?php
 
 
-namespace FPBlog\Database;
+namespace App\Database;
 
 
 interface Query

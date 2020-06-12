@@ -1,10 +1,10 @@
 <?php
 
 
-namespace FPBlog\Database;
+namespace App\Database;
 
 
-use FPBlog\Models\Model;
+use App\Models\Model;
 
 interface Driver
 {

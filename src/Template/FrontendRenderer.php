@@ -1,7 +1,7 @@
 <?php
 
 
-namespace FPBlog\Template;
+namespace App\Template;
 
 
 interface FrontendRenderer extends Renderer { }

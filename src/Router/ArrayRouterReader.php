@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace FPBlog\Router;
+namespace App\Router;
 
 class ArrayRouterReader implements RouterReader
 {
@@ -8,8 +8,8 @@ class ArrayRouterReader implements RouterReader
 	public function readeRoute(): array
 	{
 		return [
-			['GET', '/', ['FPBlog\Controllers\Homepage', 'show']],
-			['GET', '/{slug}', ['FPBlog\Controllers\Page', 'show']],
+			['GET', '/', ['App\Controllers\Homepage', 'show']],
+			['GET', '/{slug}', ['App\Controllers\Page', 'show']],
 		];
 	}
 }
