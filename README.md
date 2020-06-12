@@ -18,6 +18,7 @@ This project will help you to start a new project in PHP
 - `docker-compose up`
 - Run in background `docker-compose up -d`
 - To see your local cotainers running process `docker ps`
+- Stop containers in background `docker-compose down`
 
 # Helpers
 If you notice that your machine has any file permission errors, you might need to execute the following in a project locally
