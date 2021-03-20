@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/masterfermin02/fp-blog.svg?branch=master)](https://travis-ci.org/masterfermin02/fp-blog)
+[![Build Status](https://travis-ci.com/masterfermin02/php-starter-kit.svg?branch=master)](https://travis-ci.org/masterfermin02/php-starter-kit)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
 # PHP starter kit
 This project will help you to start a new project in PHP
