@@ -2,7 +2,7 @@
 
 # default values
 
-PORT=8080
+PORT=8081
 APPLICATION_ENV="dev"
 
 
