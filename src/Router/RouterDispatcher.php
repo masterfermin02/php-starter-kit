@@ -21,14 +21,14 @@ class RouterDispatcher implements RouteDispatcherInterface {
 
 	public function __construct(array $routeInfo, Injector $injector)
 	{
-		$this->dispatchIndex = $routeInfo[0];
+		list($index) = $routeInfo;
+		$this->dispatchIndex = $index;
 		$this->routeInfo    = $routeInfo;
 		$this->injector     = $injector;
 	}
 
 	public function dispatch(): void
 	{
-		// TODO: Implement dispach() method.
 		$this->injector->make($this->dispatchers[$this->dispatchIndex])->dispatch();
 	}
 
