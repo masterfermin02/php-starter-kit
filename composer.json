@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "php": ">=8.0.0",
+    "php": "~8.0|8.1",
     "filp/whoops": "~2.1",
     "patricklouys/http": "~1.4",
     "nikic/fast-route": "^1.3",
