@@ -13,7 +13,10 @@ class FilePageReader implements PageReader
 		$this->fileReader = $fileReader;
 	}
 
-	public function readBySlug(string $slug) : string
+    /**
+     * @throws InvalidPageException
+     */
+    public function readBySlug(string $slug) : string
 	{
 		$path = "pages/$slug.md";
 

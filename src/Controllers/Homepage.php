@@ -1,4 +1,5 @@
-<?php declare(strict_types = 1);
+<?php
+declare(strict_types=1);
 
 namespace App\Controllers;
 
@@ -6,25 +7,22 @@ use App\Template\FrontendRenderer;
 use Http\Request;
 use Http\Response;
 
-class Homepage {
+class Homepage
+{
 
-	protected $request;
-	protected $response;
-	protected $renderer;
+    public function __construct(
+        public readonly Request $request,
+        public readonly Response $response,
+        public readonly FrontendRenderer $renderer
+    ) {
+    }
 
-	public function __construct(Request $request, Response $response, FrontendRenderer $renderer)
-	{
-		$this->request  = $request;
-		$this->response = $response;
-		$this->renderer = $renderer;
-	}
-
-	public function show()
-	{
-		$data = [
-			'name' => $this->request->getParameter('name', 'stranger'),
-		];
-		$html = $this->renderer->render('Homepage', $data);
-		$this->response->setContent($html);
-	}
+    public function show()
+    {
+        $data = [
+            'name' => $this->request->getParameter('name', 'stranger'),
+        ];
+        $html = $this->renderer->render('Homepage', $data);
+        $this->response->setContent($html);
+    }
 }

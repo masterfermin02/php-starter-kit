@@ -4,11 +4,9 @@ namespace App\File;
 
 class FileReader implements Reader
 {
-	protected $folder;
-
-	public function __construct (string $folder)
-	{
-		$this->folder = $folder;
+	public function __construct (
+       public readonly string $folder
+    ){
 	}
 
 	public function fileExists (string $path): bool
@@ -16,8 +14,8 @@ class FileReader implements Reader
 		return file_exists("$this->folder/$path");
 	}
 
-	public function read( string $path ): string
+	public function read( string $name ): string
 	{
-		return file_get_contents("$this->folder/$path");
+		return file_get_contents("$this->folder/$name");
 	}
 }

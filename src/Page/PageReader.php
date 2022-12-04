@@ -4,5 +4,8 @@ namespace App\Page;
 
 interface PageReader
 {
+    /**
+     * @throws InvalidPageException
+     */
 	public function readBySlug(string $slug) : string;
 }

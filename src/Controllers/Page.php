@@ -10,21 +10,14 @@ use Http\Response;
 
 class Page
 {
-	private $response;
-	private $renderer;
-	private $pageReader;
-
 	public function __construct(
-		Response $response,
-		FrontendRenderer $renderer,
-		PageReader $pageReader
+        public readonly Response $response,
+        public readonly FrontendRenderer $renderer,
+        public readonly PageReader $pageReader
 	) {
-		$this->response   = $response;
-		$this->renderer   = $renderer;
-		$this->pageReader = $pageReader;
 	}
 
-	public function show($params)
+	public function show($params): void
 	{
 		$slug = $params['slug'];
 
@@ -32,7 +25,8 @@ class Page
 			$data['content'] = $this->pageReader->readBySlug($slug);
 		} catch (InvalidPageException $e) {
 			$this->response->setStatusCode(404);
-			return $this->response->setContent('404 - Page not found');
+			$this->response->setContent('404 - Page not found');
+            return;
 		}
 
 		$html = $this->renderer->render('Page', $data);
