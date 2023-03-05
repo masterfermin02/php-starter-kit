@@ -1,6 +1,49 @@
 /*
  * Globals
  */
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset {
+    margin: 0;
+    padding: 0;
+}
+img, fieldset {
+    border: 0;
+}
+
+body, select, input, textarea {
+    font: 85%/1.5 "lucida sans", verdana, arial, helvetica, sans-serif;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.6em;
+}
+h4 {
+    font-size: 1.4em;
+}
+h5 {
+    font-size: 1.2em;
+}
+h6 {
+    font-size: 1em;
+}
+p {
+    margin-bottom: 1.2em;
+}
+.error {
+    color: #C00;
+    font-weight: bold;
+}
+.confirmation {
+    color: #080;
+    font-weight: bold;
+}
 
 /* Links */
 a,

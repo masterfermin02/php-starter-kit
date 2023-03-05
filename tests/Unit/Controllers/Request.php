@@ -11,103 +11,103 @@ class Request implements IRequest
         'data' => 'test'
     ];
 
-    public function getParameter($key, $defaultValue = null)
+    public function getParameter($key, $defaultValue = null): int|string|null
     {
         return $this->data[$key] ?? $defaultValue;
     }
 
-    public function getQueryParameter($key, $defaultValue = null)
+    public function getQueryParameter(string $key, $defaultValue = null): string|int|null
     {
-        // TODO: Implement getQueryParameter() method.
+        return null;
     }
 
-    public function getBodyParameter($key, $defaultValue = null)
+    public function getBodyParameter(string $key, $defaultValue = null): string|int|null
     {
-        // TODO: Implement getBodyParameter() method.
+        return null;
     }
 
-    public function getFile($key, $defaultValue = null)
+    public function getFile(string $key, $defaultValue = null): string|null
     {
-        // TODO: Implement getFile() method.
+        return null;
     }
 
-    public function getCookie($key, $defaultValue = null)
+    public function getCookie(string $key, $defaultValue = null): string|int|null
     {
-        // TODO: Implement getCookie() method.
+        return null;
     }
 
-    public function getParameters()
+    public function getParameters(): array
     {
-        // TODO: Implement getParameters() method.
+        return [];
     }
 
-    public function getQueryParameters()
+    public function getQueryParameters(): array
     {
-        // TODO: Implement getQueryParameters() method.
+        return [];
     }
 
-    public function getBodyParameters()
+    public function getBodyParameters(): array
     {
-        // TODO: Implement getBodyParameters() method.
+        return [];
     }
 
-    public function getRawBody()
+    public function getRawBody(): string
     {
-        // TODO: Implement getRawBody() method.
+        return "";
     }
 
-    public function getCookies()
+    public function getCookies(): array
     {
-        // TODO: Implement getCookies() method.
+        return [];
     }
 
-    public function getFiles()
+    public function getFiles(): array
     {
-        // TODO: Implement getFiles() method.
+        return [];
     }
 
-    public function getUri()
+    public function getUri(): string
     {
-        // TODO: Implement getUri() method.
+        return "";
     }
 
-    public function getPath()
+    public function getPath(): string
     {
-        // TODO: Implement getPath() method.
+        return "";
     }
 
-    public function getMethod()
+    public function getMethod(): string
     {
-        // TODO: Implement getMethod() method.
+        return "";
     }
 
-    public function getHttpAccept()
+    public function getHttpAccept(): string
     {
-        // TODO: Implement getHttpAccept() method.
+        return "";
     }
 
-    public function getReferer()
+    public function getReferer(): string
     {
-        // TODO: Implement getReferer() method.
+        return "";
     }
 
-    public function getUserAgent()
+    public function getUserAgent(): string
     {
-        // TODO: Implement getUserAgent() method.
+        return "";
     }
 
-    public function getIpAddress()
+    public function getIpAddress(): string
     {
-        // TODO: Implement getIpAddress() method.
+        return "";
     }
 
-    public function isSecure()
+    public function isSecure(): bool
     {
-        // TODO: Implement isSecure() method.
+        return false;
     }
 
-    public function getQueryString()
+    public function getQueryString(): string
     {
-        // TODO: Implement getQueryString() method.
+        return "";
     }
 }
